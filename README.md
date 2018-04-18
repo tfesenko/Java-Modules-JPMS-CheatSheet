@@ -1,14 +1,14 @@
 Java Modules (JPMS) Cheat Sheet
 ========
 
-Project Jigsaw, The Java Platform Module System(JPMS), Modularity, JSR 277, JSR 376... These are the names of one of the most significant features of Java 9. Modularity reduces the complexity of the system by providing:
+Project Jigsaw, The Java Platform Module System (JPMS), Modularity, JSR 277, JSR 376... These are the names of one of the most significant features of Java 9. Modularity reduces the complexity of the system by providing:
 * Explicit dependencies
 * Clear interface
 * Strong encapsulation
 	
 Modularity is also arguably one of the terrifying Java features of all times.  Despite these numerous benefits, proper modules are still rare species in the Java world. 
 
-The purpose of this cheat sheet is to show that modules in Java are friendly to us, developers, and easy to use. The [Module Path vs Class-Path](#module-path-vs-class-path) section will be helpful for people migrating existing non-modular applications to JPMS. The [Module Declaration (module-info.java)](#module-declaration-module-infojava) section explains how to define modules. 
+The purpose of this cheat sheet is to show that modules in Java are friendly to us, developers, and easy to use. The [Module Declaration (module-info.java)](#module-declaration-module-infojava) section explains how to define modules. The [Module Path vs Class-Path](#module-path-vs-class-path) section will be helpful for people migrating existing non-modular applications to JPMS. 
 
 Table of Contents
 -----------------
@@ -218,7 +218,7 @@ module com.mycompany.myproject { // the module name should be unique
    // * runtime: to all types, including private types, and all their members, including private ones
    opens com.mycompany.myproject.ollie;
    
-   // qualified `open` directive - only modules from the to cause can access this package at runtime
+   // a qualified `opens` directive - only modules from the to cause can access this package at runtime
    opens com.mycompany.myproject.ollie.internal to org.anothercompany.coolframework;
    
    // Also see a section about the open modules - a module which opens ALL its packages
@@ -272,7 +272,7 @@ module com.mycompany.oldmodule {}
 
 Advanced: The formal grammar of the module declaration file
 --------
-OK, open modules, annotations... What else? :coffee: A structure of a module declaration may seem too complecated. But it's not! Just see the grammar for module files (copied from section 7.7 of [Java 9 Language Specification](http://cr.openjdk.java.net/~mr/jigsaw/spec/java-se-9-jls-diffs.pdf)):
+OK, open modules, annotations... What else? :coffee: A structure of a module declaration may seem too complicated. But it's not! Just see the grammar for module files (copied from section 7.7 of [Java 9 Language Specification](http://cr.openjdk.java.net/~mr/jigsaw/spec/java-se-9-jls-diffs.pdf)):
 ```
 ModuleDeclaration:
   {Annotation} [open] module Identifier {. Identifier}
