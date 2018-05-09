@@ -97,7 +97,8 @@ Read more:
 
 Module's API
 --------
-				
+In pre-Java 9 world any public class was available everywhere and could be used by any other class. The "internal" packages were not in fact internal. With Java 9, module's contents are not available to the external classes by default; one must explicitly define what the module exposes to outside world so that other modules could use it either in compile time or via reflection. Module's API is now expressly specified in the module's declaration.
+
 <table>
 	<tbody>
 		<tr>
@@ -152,7 +153,7 @@ A package can be exported or opened in
 	<tbody>
 		<tr>
 			<th colspan="2"> </th>
-   <th><h3>Module Declaration</h3></th>
+   <th><h3>Module Descriptor</h3></th>
    <th><h3>Java Command Line Options</h3></th>
 		</tr>
    <tr>
@@ -163,7 +164,8 @@ A package can be exported or opened in
 		</tr>
 		<tr>
 			<th><h3>Qualified</h3></th>
-			<td><code>exports <em>packageName</em> to <em>targetModule</em></code></td>
+			<td><code>exports <em>packageName</em> to <em>targetModule</em></code>
+				<br/><br/><em><strike>ALL-UNNAMED</strike></em> is NOT allowed in the descriptor</td>
 			<td><code>--add-exports <em>sourceModule</em><b>/</b><em>packageName</em><b>=</b><em>targetModule(,targetModule)*</em></code><br/></br/>
 	The target-module can be <em>ALL-UNNAMED</em> to export to all unnamed modules</td>
 		</tr>
