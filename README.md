@@ -354,7 +354,16 @@ Explicit modules follow the rules for [Dependencies](#modules-dependencies) and 
 Automatic Modules
 --------
 Automatic modules are plain JARs (no module descriptor) on the module path.
+<table>
+  <tr>
+    <td> :pencil2: <b>reads</b> vs <b>requires</b></br>
+	"Module1 reads Module2" means that Module1 can access types from Module2's exported packages.</br>
+	A module that <em>requires</em> another module also <em>reads</em> the other module.</td>
+  </tr>
+</table>
+
 As they don't have a `module-info.class`, this information will be calculated using the following rules:
+
 * **Name**: `Automatic-Module-Name` from `MANIFEST.MF` if it's present. Derived from the JAR name otherwise. 
   * They can be referenced using this name;
   * See http://branchandbound.net/blog/java/2017/12/automatic-module-name/ for details;
@@ -370,7 +379,7 @@ Unnamed Module
 --------
 Everything on the classpath becomes an unnamed module.
 * ~**Name**~: No name;
-* **Dependencies**: **WIP**
+* **Dependencies**:
   * Reads all other modules
   * Can read or open other`ALL-UNNAMED` in the [command line](#how-to-export-or-open-a-package)
 * **API**:
