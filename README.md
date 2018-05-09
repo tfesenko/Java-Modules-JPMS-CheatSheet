@@ -200,7 +200,7 @@ module com.mycompany.myproject { // the module name should be unique
    exports com.mycompany.myproject.foo;
    
    exports com.mycompany.myproject.foo.internal
-       // having a "to" clause means that this is a **qualified export** => exports the package only to the friends of the correct module - the modules specified in the to clause
+       // having a "to" clause means that this is a **qualified export** => exports the package only to the friends of the current module - the modules specified in the `to` clause
        to com.example.x;
    exports com.mycompany.myproject.bar.internal to com.example.y, com.example.z;
           
@@ -208,19 +208,24 @@ module com.mycompany.myproject { // the module name should be unique
 ```
 
 ### Packages Open for Reflection
-The `opens` directive opens the module to the outside modules for the reflection:
-* useful when using reflection-based frameworks such as Spring or Guice;
-* code from inside the current module can still reflectively access all types and members from the module regardless whether they were opened or not
+The `opens` directive opens the module to the **outside** modules for the reflection. It's usually useful when using reflection-based frameworks such as Spring or Guice;
+
+<table>
+  <tr>
+    <td>:pencil2: As for the code from <b>inside</b> of the current module, it can still reflectively access all types and members from the module regardless whether they were opened or not</td>
+  </tr>
+</table>
+
 ![Open package](./images/open_package.png)
 ```java
 module com.mycompany.myproject { // the module name should be unique
    
-   // opens the package for reflection to ALL other modules
+   // `opens` the package for reflection to ALL other modules
    // * compile time: no access at all 
    // * runtime: to all types, including private types, and all their members, including private ones
    opens com.mycompany.myproject.ollie;
    
-   // a qualified `opens` directive - only modules from the to cause can access this package at runtime
+   // a qualified `opens` directive - only modules from the `to` cause can access this package at runtime
    opens com.mycompany.myproject.ollie.internal to org.anothercompany.coolframework;
    
    // Also see a section about the open modules - a module which opens ALL its packages
