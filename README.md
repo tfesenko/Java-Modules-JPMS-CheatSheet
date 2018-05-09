@@ -279,10 +279,10 @@ module com.mycompany.oldmodule {}
 
 Advanced: The formal grammar of the module declaration file
 --------
-OK, open modules, annotations... What else? :coffee: A structure of a module declaration may seem too complicated. But it's not! Just see the grammar for module files (copied from section 7.7 of [Java 9 Language Specification](http://cr.openjdk.java.net/~mr/jigsaw/spec/java-se-9-jls-diffs.pdf)):
-```
+OK, open modules, annotations... What else? :coffee: A structure of a module declaration may seem too complicated. But it's not! Just see the grammar for module files (taken from section 7.7 of [Java 9 Language Specification](http://cr.openjdk.java.net/~mr/jigsaw/spec/java-se-9-jls-diffs.pdf)):
+```yaml
 ModuleDeclaration:
-  {Annotation} [open] module Identifier {. Identifier}
+  {Annotation} [open] module Identifier{.Identifier}
   { {ModuleDirective} }
 
 ModuleDirective:
@@ -295,6 +295,9 @@ ModuleDirective:
 RequiresModifier:
   (one of)
   transitive static
+  
+ModuleName:
+  Identifier{.Identifier}
 ```
 
 Module Path vs Class Path
