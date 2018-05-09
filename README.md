@@ -102,18 +102,18 @@ Module's API
 	<tbody>
 		<tr>
 			<th colspan="2" rowspan="2"> </th>
-   <th colspan="2">Compile Access</th>
-   <th colspan="2">Reflection Access</th>
+   <th colspan="2"><h3>Compile Access</h3></th>
+   <th colspan="2"><h3>Reflection Access</h3></th>
 		</tr>
 		<tr>
-			<th>What</th>
-   <th>By Whom</th>
- 		<th>What</th>
-   <th>By Whom</th>
+			<th><h3>What</h3></th>
+   <th><h3>By Whom</h3></th>
+ 		<th><h3>What</h3></th>
+   <th><h3>By Whom</h3></th>
 		</tr>  
   <tr>
-			<th rowspan="2">Export Package</th>
-			<th>Unqualified</th>
+			<th rowspan="2"><h3>Export Package</h3></th>
+			<th><h3>Unqualified</h3></th>
 			<td rowspan="2"><ul><li><b>Public and protected types</b> in the package</li>
 <li><b>Public and protected members</b> of those types</li><ul></td>
 			<td>All Code</td>
@@ -122,13 +122,13 @@ Module's API
 			<td>All Code</td>
 		</tr>
 		<tr>
-			<th>Qualified</th>
+			<th><h3>Qualified</h3></th>
 			<td>Modules from the "to" clause</td>
 			<td>Modules from the "to" clause</td>
 		</tr>
   <tr>
-			<th rowspan="2">Open Package</th>
-			<th>Unqualified</th>
+			<th rowspan="2"><h3>Open Package</h3></th>
+			<th><h3>Unqualified</h3></th>
 			<td rowspan="2">NO access</td>
 			<td>All Code</td>
 			<td rowspan="2"><ul><li><b>All</b> types in the package</li>
@@ -136,7 +136,7 @@ Module's API
 			<td>All Code</td>
 		</tr>
 		<tr>
-			<th>Qualified</th>
+			<th><h3>Qualified</h3></th>
 			<td>Modules from the "to" clause</td>
 			<td>Modules from the "to" clause</td>
 		</tr>  
@@ -152,29 +152,29 @@ A package can be exported or opened in
 	<tbody>
 		<tr>
 			<th colspan="2"> </th>
-   <th>Module Declaration</th>
-   <th>Java Command Line Options</th>
+   <th><h3>Module Declaration</h3></th>
+   <th><h3>Java Command Line Options</h3></th>
 		</tr>
    <tr>
-			<th rowspan="2">Export Package</th>
-			<th>Unqualified</th>
+			<th rowspan="2"><h3>Export Package</h3></th>
+			<th><h3>Unqualified</h3></th>
 	   		<td><code>exports <em>packageName</em></code></td>
 			<td>n/a</td>
 		</tr>
 		<tr>
-			<th>Qualified</th>
+			<th><h3>Qualified</h3></th>
 			<td><code>exports <em>packageName</em> to <em>targetModule</em></code></td>
 			<td><code>--add-exports <em>sourceModule</em><b>/</b><em>packageName</em><b>=</b><em>targetModule(,targetModule)*</em></code><br/></br/>
 	The target-module can be <em>ALL-UNNAMED</em> to export to all unnamed modules</td>
 		</tr>
    <tr>
-			<th rowspan="2">Open Package</th>
-			<th>Unqualified</th>
+			<th rowspan="2"><h3>Open Package</h3></th>
+			<th><h3>Unqualified</h3></th>
 			<td><code>opens <em>packageName</em></code></td>
 			<td>n/a</td>
 		</tr>
 		<tr>
-			<th>Qualified</th>
+			<th><h3>Qualified</h3></th>
 			<td><code>opens <em>packageName</em> to <em>targetModule</em></code></td>
 			<td><code>--add-opens <em>sourceModule</em><b>/</b><em>packageName</em><b>=</b><em>targetModule(,targetModule)*</em></code></td>
 		</tr>
@@ -296,19 +296,19 @@ Module Path vs Class Path
 <table>
   <tr>
     <th> </th>
-    <th>Command line </th>
-    <th>Modular JAR (JAR with a module-info.class)</th>
-    <th>Plain JAR</th>
+    <th><h3>Command line</h3></th>
+    <th><h3>Modular JAR (JAR with a module-info.class)</h3></th>
+    <th><h3>Plain JAR</h3></th>
   </tr>
   <tr>
-    <th>Module Path</th>
+    <th><h3>Module Path</h3></th>
     <td><ul><li><code>--module-path modulepath</code></li>
 	    <li><code>-p modulepath</code></li></ul></td>
     <td><b>Explicitly defined</b> module</td>
     <td><b>Automatic</b> module</td>
   </tr>
   <tr>
-    <th>Classpath</th>
+    <th><h3>Classpath</h3></th>
     <td><ul><li><code>--class-path classpath</code></li>
 	    <li><code>-classpath classpath</code></li>
 	    <li><code>-cp classpath</code></li>
