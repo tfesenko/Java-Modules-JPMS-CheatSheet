@@ -405,6 +405,7 @@ Resources
 
 Acknowledgments
 =========
+* Special thanks to [Vera Zvereva](https://www.linkedin.com/in/verazvereva) whose feedback was invaluable. 
 * https://github.com/ajaxorg/ace/pull/3628 
-* The Java Module System  by Nicolai Parlog : https://www.manning.com/books/the-java-module-system  
+
 
